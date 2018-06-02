@@ -14,16 +14,15 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PropertyCell", for: indexPath) as! PropertyCell
-        return cell
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "PropertyCell", for: indexPath)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (UIScreen.main.bounds.width - 16) / traitCollection.numberOfRowsInCollectionView()
-        return CGSize(width: width - ((traitCollection.numberOfRowsInCollectionView() - 1) * 5), height: 200)
+        let width = (UIScreen.main.bounds.width - 16) / traitCollection.numberOfRowsInCollectionView() - ((traitCollection.numberOfRowsInCollectionView() - 1) * 5)
+        return CGSize(width: width , height: width * 0.6)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 8, bottom: 5, right: 8)
