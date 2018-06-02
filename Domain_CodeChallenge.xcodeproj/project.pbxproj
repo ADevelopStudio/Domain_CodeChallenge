@@ -18,6 +18,9 @@
 		627CF9C220C26DA000E46759 /* Yalta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9BF20C26D7800E46759 /* Yalta.swift */; };
 		627CF9C320C26DA000E46759 /* Yalta+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9BE20C26D7800E46759 /* Yalta+Extensions.swift */; };
 		627CF9C520C2748800E46759 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9C420C2748800E46759 /* Extentions.swift */; };
+		627CF9C720C2793800E46759 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9C620C2793800E46759 /* NavigationController.swift */; };
+		627CF9C920C27A7D00E46759 /* ViewController+SegmentSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9C820C27A7D00E46759 /* ViewController+SegmentSwitcher.swift */; };
+		627CF9CB20C27C2500E46759 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9CA20C27C2500E46759 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		627CF9BF20C26D7800E46759 /* Yalta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yalta.swift; sourceTree = "<group>"; };
 		627CF9C020C26D7800E46759 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		627CF9C420C2748800E46759 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		627CF9C620C2793800E46759 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		627CF9C820C27A7D00E46759 /* ViewController+SegmentSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+SegmentSwitcher.swift"; sourceTree = "<group>"; };
+		627CF9CA20C27C2500E46759 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,8 @@
 			children = (
 				627CF99820C2666D00E46759 /* ViewController.swift */,
 				627CF9B720C2681500E46759 /* ViewController+UICollectionView.swift */,
+				627CF9C820C27A7D00E46759 /* ViewController+SegmentSwitcher.swift */,
+				627CF9C620C2793800E46759 /* NavigationController.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 			children = (
 				627CF9BD20C26D6100E46759 /* Layout */,
 				627CF9C420C2748800E46759 /* Extentions.swift */,
+				627CF9CA20C27C2500E46759 /* Constants.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -243,8 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627CF9C720C2793800E46759 /* NavigationController.swift in Sources */,
+				627CF9CB20C27C2500E46759 /* Constants.swift in Sources */,
 				627CF99920C2666D00E46759 /* ViewController.swift in Sources */,
 				627CF9C220C26DA000E46759 /* Yalta.swift in Sources */,
+				627CF9C920C27A7D00E46759 /* ViewController+SegmentSwitcher.swift in Sources */,
 				627CF9C120C26DA000E46759 /* UIView+constraints.swift in Sources */,
 				627CF9B820C2681500E46759 /* ViewController+UICollectionView.swift in Sources */,
 				627CF9C520C2748800E46759 /* Extentions.swift in Sources */,
