@@ -11,7 +11,7 @@ Domain Code Challenge
 
 * ~~The code must be written to support iOS9+ and all the devices that includes. Assets must be optimised for each device scale. You can get high resolution or vector graphics from The Noun Project or any source your prefer.~~
 
-* Some examples of the use of size classes must be included.
+* ~~Some examples of the use of size classes must be included.~~
 
 * You are expected to include unit tests where appropriate. You can use XCTest or any other testing framework you prefer.
 
