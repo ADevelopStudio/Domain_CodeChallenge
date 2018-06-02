@@ -30,7 +30,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (UIScreen.main.bounds.width - 16) / traitCollection.numberOfRowsInCollectionView() - ((traitCollection.numberOfRowsInCollectionView() - 1) * 5)
-        return CGSize(width: width , height: width * 0.6)
+        return CGSize(width: width , height: width * 0.7)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 8, bottom: 5, right: 8)
