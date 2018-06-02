@@ -12,6 +12,11 @@
 		627CF99E20C2666F00E46759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627CF99D20C2666F00E46759 /* Assets.xcassets */; };
 		627CF9A120C2666F00E46759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627CF99F20C2666F00E46759 /* LaunchScreen.storyboard */; };
 		627CF9AC20C2666F00E46759 /* Domain_CodeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9AB20C2666F00E46759 /* Domain_CodeChallengeTests.swift */; };
+		627CF9B820C2681500E46759 /* ViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9B720C2681500E46759 /* ViewController+UICollectionView.swift */; };
+		627CF9BB20C26CB200E46759 /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9BA20C26CB200E46759 /* PropertyCell.swift */; };
+		627CF9C120C26DA000E46759 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9C020C26D7800E46759 /* UIView+constraints.swift */; };
+		627CF9C220C26DA000E46759 /* Yalta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9BF20C26D7800E46759 /* Yalta.swift */; };
+		627CF9C320C26DA000E46759 /* Yalta+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9BE20C26D7800E46759 /* Yalta+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,11 @@
 		627CF9A720C2666F00E46759 /* Domain_CodeChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Domain_CodeChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		627CF9AB20C2666F00E46759 /* Domain_CodeChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain_CodeChallengeTests.swift; sourceTree = "<group>"; };
 		627CF9AD20C2666F00E46759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		627CF9B720C2681500E46759 /* ViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		627CF9BA20C26CB200E46759 /* PropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
+		627CF9BE20C26D7800E46759 /* Yalta+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Yalta+Extensions.swift"; sourceTree = "<group>"; };
+		627CF9BF20C26D7800E46759 /* Yalta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yalta.swift; sourceTree = "<group>"; };
+		627CF9C020C26D7800E46759 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				627CF99620C2666D00E46759 /* AppDelegate.swift */,
-				627CF99820C2666D00E46759 /* ViewController.swift */,
+				627CF9B920C26C9300E46759 /* Views */,
+				627CF9B620C267F400E46759 /* VCs */,
+				627CF9BC20C26D2300E46759 /* Support Files */,
 				627CF99D20C2666F00E46759 /* Assets.xcassets */,
 				627CF99F20C2666F00E46759 /* LaunchScreen.storyboard */,
 				627CF9A220C2666F00E46759 /* Info.plist */,
@@ -91,6 +103,41 @@
 				627CF9AD20C2666F00E46759 /* Info.plist */,
 			);
 			path = Domain_CodeChallengeTests;
+			sourceTree = "<group>";
+		};
+		627CF9B620C267F400E46759 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				627CF99820C2666D00E46759 /* ViewController.swift */,
+				627CF9B720C2681500E46759 /* ViewController+UICollectionView.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		627CF9B920C26C9300E46759 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				627CF9BA20C26CB200E46759 /* PropertyCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		627CF9BC20C26D2300E46759 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				627CF9BD20C26D6100E46759 /* Layout */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		627CF9BD20C26D6100E46759 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				627CF9C020C26D7800E46759 /* UIView+constraints.swift */,
+				627CF9BF20C26D7800E46759 /* Yalta.swift */,
+				627CF9BE20C26D7800E46759 /* Yalta+Extensions.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				627CF99920C2666D00E46759 /* ViewController.swift in Sources */,
+				627CF9C220C26DA000E46759 /* Yalta.swift in Sources */,
+				627CF9C120C26DA000E46759 /* UIView+constraints.swift in Sources */,
+				627CF9B820C2681500E46759 /* ViewController+UICollectionView.swift in Sources */,
+				627CF9C320C26DA000E46759 /* Yalta+Extensions.swift in Sources */,
+				627CF9BB20C26CB200E46759 /* PropertyCell.swift in Sources */,
 				627CF99720C2666D00E46759 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
