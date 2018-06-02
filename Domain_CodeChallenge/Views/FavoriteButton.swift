@@ -9,15 +9,15 @@
 import UIKit
 class FavouriteButton: UIButton {
 
-    var onTap: (()->())? = nil
+    var onTap: ((FavouriteButton)->())? = nil
     var isFavorite = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.cornerRadius = frame.height/2
+        self.layer.cornerRadius = 5
         self.titleLabel?.font = .systemFont(ofSize: 35, weight: .regular)
+        self.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         self.setTitleColor(.red, for: [])
-        self.setFavorite(isFavorite)
         self.addTarget(self, action: #selector(self.tap), for: .touchUpInside)
     }
     
@@ -26,9 +26,8 @@ class FavouriteButton: UIButton {
     }
     
     @objc func tap()  {
-        self.setFavorite(true)
+        self.onTap?(self)
     }
-
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

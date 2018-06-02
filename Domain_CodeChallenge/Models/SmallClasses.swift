@@ -15,7 +15,23 @@ struct Property: Codable {
     var id: Int
     var address: String
     var media: [Media]
+    
+    /// result =  isNowFavorite: True/False
+    var isFavorite: Bool {
+        return  Constants.favouriteList.contains(self.id)
+    }
+    func addRemoveFromFavorites() -> Bool {
+        if isFavorite {
+            Constants.favouriteList.remove(self.id)
+            Constants.saveFavouriteList()
+            return false
+        }
+        Constants.favouriteList.insert(self.id)
+        Constants.saveFavouriteList()
+        return true
+    }
 }
+
 struct Media: Codable {
     var imageUrl: String
     var mediaType: String //image

@@ -24,4 +24,11 @@ enum TypeOfRequest {
 
 struct Constants {
     static var imageCache = NSCache<NSString, UIImage>()
+    static var favouriteList: Set<Int> =  Set(UserDefaults.standard.object(forKey: "FavoriteList") as? Array<Int> ?? [])
+
+    static func saveFavouriteList()  {
+         UserDefaults.standard.set(Array(self.favouriteList), forKey: "FavoriteList")
+    }
 }
+
+

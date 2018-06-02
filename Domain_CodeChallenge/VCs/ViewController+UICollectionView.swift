@@ -15,11 +15,15 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "PropertyCell", for: indexPath) as! PropertyCell
-        cell.fillWith(property: properties[indexPath.row], isFavorite: false) {
-            
+        cell.fillWith(property: properties[indexPath.row]) { favouriteBtn in
+            let isFavoriteNow = self.properties[indexPath.row].addRemoveFromFavorites()
+            favouriteBtn.setFavorite(isFavoriteNow)
+            self.favoriteCounter?.title = "☆: \(Constants.favouriteList.count)"
         }
         return cell
     }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return properties.count
     }

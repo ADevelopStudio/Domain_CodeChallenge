@@ -13,8 +13,21 @@ extension ViewController {
     func setupNavigationBar()  {
         self.navigationItem.titleView = segmenter
         segmenter.addTarget(self, action: #selector(self.loadData), for: .valueChanged)
-        self.navigationItem.setRightBarButtonItems([favoriteCounter], animated: false)
-        favoriteCounter.title = "☆: 10"
+        favoriteCounter = UIBarButtonItem(title: "☆: \(Constants.favouriteList.count)", style: .plain, target: self, action: #selector(self.resetFavourites))
+        self.navigationItem.setRightBarButtonItems([favoriteCounter!], animated: false)
+    }
+    
+    @objc func resetFavourites(){
+        if  Constants.favouriteList.isEmpty {return}
+        let alert = UIAlertController(title: "Clear favourite list", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { _ in
+            Constants.favouriteList = []
+            Constants.saveFavouriteList()
+            self.favoriteCounter?.title = "☆: 0"
+            self.collectionView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

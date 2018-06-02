@@ -29,9 +29,9 @@ class PropertyCell: UICollectionViewCell {
         self.createView()
     }
     
-    func fillWith(property: Property, isFavorite: Bool, onFavoriteTap: @escaping ()->())  {
+    func fillWith(property: Property, onFavoriteTap: @escaping (FavouriteButton)->())  {
         self.favoriteBtn.onTap = onFavoriteTap
-        self.favoriteBtn.setFavorite(isFavorite)
+        self.favoriteBtn.setFavorite(property.isFavorite)
         self.descr.text = property.address
         self.imageView.fillWith(property.media)
     }

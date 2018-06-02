@@ -11,7 +11,7 @@ import UIKit
 class LoadingImageView: UIImageView {
     lazy var loadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        indicator.color = .blue
+        indicator.color = .gray
         indicator.hidesWhenStopped = true
         return indicator
     }()
@@ -22,8 +22,8 @@ class LoadingImageView: UIImageView {
         self.contentMode = .center
         self.image = #imageLiteral(resourceName: "imagePlaceholder")
         self.addSubview(loadingIndicator, constraints: {
+            $0.edges(.bottom).pinToSuperviewMargins()
             $0.centerX.alignWithSuperview()
-            $0.centerY.alignWithSuperview()
         })
     }
     func fillWith(_ propertyMedias: [Media])  {

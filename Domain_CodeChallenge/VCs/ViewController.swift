@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let favoriteCounter =  UIBarButtonItem(title: "☆: -", style: .plain, target: nil, action: nil)
+    var favoriteCounter: UIBarButtonItem? = nil
     
     lazy var segmenter: UISegmentedControl = {
         let segControl = UISegmentedControl(items: TypeOfRequest.allValues.map({$0.name}))
