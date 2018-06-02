@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let favoriteCounter =  UIBarButtonItem(title: "☆: 0", style: .plain, target: nil, action: nil)
+    let favoriteCounter =  UIBarButtonItem(title: "☆: -", style: .plain, target: nil, action: nil)
     
     lazy var segmenter: UISegmentedControl = {
         let segControl = UISegmentedControl(items: TypeOfRequest.allValues.map({$0.name}))
         segControl.frame = CGRect(x: 0, y: 0, width: 200, height: 35)
-        segControl.selectedSegmentIndex = 0
+        segControl.selectedSegmentIndex =  UserDefaults.standard.integer(forKey: "TypeOfRequest")
         return segControl
     }()
     

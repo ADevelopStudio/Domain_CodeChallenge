@@ -49,6 +49,7 @@ struct ConnectionManager {
             completion([], "Error creating url")
             return
         }
+        UserDefaults.standard.set(TypeOfRequest.allValues.index(of: typeOfRequest) ?? 0, forKey: "TypeOfRequest")
         let json: [String: Any] = ["search_mode": typeOfRequest.name.lowercased(),
                                    "dwelling_types": ["Apartment / Unit / Flat"]]
         
