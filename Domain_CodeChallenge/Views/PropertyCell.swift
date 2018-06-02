@@ -11,13 +11,8 @@ import UIKit
 class PropertyCell: UICollectionViewCell {
     let descriptionLabelHeight: CGFloat  = 40
     
-    var imageView: UIImageView = {
-        let imgview = UIImageView(frame: .zero)
-        imgview.contentMode = .scaleAspectFit
-        imgview.clipsToBounds = true
-        return imgview
-    }()
-    
+    var imageView: LoadingImageView = LoadingImageView(frame: .zero)
+
     lazy var descr: UILabel = {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 2
@@ -26,19 +21,28 @@ class PropertyCell: UICollectionViewCell {
         return label
     }()
     
+    let favoriteBtn = FavouriteButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         if frame.height < descriptionLabelHeight {return}
         self.createView()
     }
     
+    func fillWith(isFavorite: Bool, onFavoriteTap: @escaping ()->())  {
+        self.favoriteBtn.onTap = onFavoriteTap
+        self.favoriteBtn.setFavorite(isFavorite)
+    }
+    
     func createView()  {
-        self.addSubview(imageView, descr, constraints: { v1, v2 in
+        self.addSubview(imageView, descr, favoriteBtn, constraints: { v1, v2, v3 in
             v1.edges.pinToSuperview(insets: UIEdgeInsets(top: 0, left: 0, bottom: self.descriptionLabelHeight, right: 0), relation: .equal)
             v2.edges(.right, .left,.bottom).pinToSuperview()
             v2.height.set(self.descriptionLabelHeight)
+            v3.height.set(40)
+            v3.width.set(40)
+            v3.edges(.top, .left).pinToSuperviewMargins()
         })
-        imageView.backgroundColor = .yellow
         descr.text = "test me now"
     }
     

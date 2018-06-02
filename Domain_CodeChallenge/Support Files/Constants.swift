@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum TypeOfRequest {
     static let allValues = [TypeOfRequest.buy , .rent]
@@ -19,4 +20,8 @@ enum TypeOfRequest {
             return "Rent"
         }
     }
+}
+
+struct Constants {
+    static var imageCache = NSCache<NSString, UIImage>()
 }
