@@ -22,8 +22,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.width - 16
-        return CGSize(width: width, height: 200)
+        let width = (UIScreen.main.bounds.width - 16) / traitCollection.numberOfRowsInCollectionView()
+        return CGSize(width: width - ((traitCollection.numberOfRowsInCollectionView() - 1) * 5), height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 8, bottom: 5, right: 8)
@@ -41,6 +41,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
             self.collectionView.performBatchUpdates({}) { (_) in }
         }, completion:nil)
     }
-
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.collectionView.performBatchUpdates({}) { (_) in }
+    }
 }
 

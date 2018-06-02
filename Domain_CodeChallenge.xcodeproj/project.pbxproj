@@ -17,6 +17,7 @@
 		627CF9C120C26DA000E46759 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9C020C26D7800E46759 /* UIView+constraints.swift */; };
 		627CF9C220C26DA000E46759 /* Yalta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9BF20C26D7800E46759 /* Yalta.swift */; };
 		627CF9C320C26DA000E46759 /* Yalta+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9BE20C26D7800E46759 /* Yalta+Extensions.swift */; };
+		627CF9C520C2748800E46759 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9C420C2748800E46759 /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		627CF9BE20C26D7800E46759 /* Yalta+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Yalta+Extensions.swift"; sourceTree = "<group>"; };
 		627CF9BF20C26D7800E46759 /* Yalta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yalta.swift; sourceTree = "<group>"; };
 		627CF9C020C26D7800E46759 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		627CF9C420C2748800E46759 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				627CF9BD20C26D6100E46759 /* Layout */,
+				627CF9C420C2748800E46759 /* Extentions.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				627CF9C220C26DA000E46759 /* Yalta.swift in Sources */,
 				627CF9C120C26DA000E46759 /* UIView+constraints.swift in Sources */,
 				627CF9B820C2681500E46759 /* ViewController+UICollectionView.swift in Sources */,
+				627CF9C520C2748800E46759 /* Extentions.swift in Sources */,
 				627CF9C320C26DA000E46759 /* Yalta+Extensions.swift in Sources */,
 				627CF9BB20C26CB200E46759 /* PropertyCell.swift in Sources */,
 				627CF99720C2666D00E46759 /* AppDelegate.swift in Sources */,
