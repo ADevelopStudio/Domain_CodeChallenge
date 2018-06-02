@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		627CF99720C2666D00E46759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF99620C2666D00E46759 /* AppDelegate.swift */; };
 		627CF99920C2666D00E46759 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF99820C2666D00E46759 /* ViewController.swift */; };
-		627CF99C20C2666E00E46759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627CF99A20C2666E00E46759 /* Main.storyboard */; };
 		627CF99E20C2666F00E46759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627CF99D20C2666F00E46759 /* Assets.xcassets */; };
 		627CF9A120C2666F00E46759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 627CF99F20C2666F00E46759 /* LaunchScreen.storyboard */; };
 		627CF9AC20C2666F00E46759 /* Domain_CodeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9AB20C2666F00E46759 /* Domain_CodeChallengeTests.swift */; };
@@ -29,7 +28,6 @@
 		627CF99320C2666D00E46759 /* Domain_CodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Domain_CodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		627CF99620C2666D00E46759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		627CF99820C2666D00E46759 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		627CF99B20C2666E00E46759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		627CF99D20C2666F00E46759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		627CF9A020C2666F00E46759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		627CF9A220C2666F00E46759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 			children = (
 				627CF99620C2666D00E46759 /* AppDelegate.swift */,
 				627CF99820C2666D00E46759 /* ViewController.swift */,
-				627CF99A20C2666E00E46759 /* Main.storyboard */,
 				627CF99D20C2666F00E46759 /* Assets.xcassets */,
 				627CF99F20C2666F00E46759 /* LaunchScreen.storyboard */,
 				627CF9A220C2666F00E46759 /* Info.plist */,
@@ -179,7 +176,6 @@
 			files = (
 				627CF9A120C2666F00E46759 /* LaunchScreen.storyboard in Resources */,
 				627CF99E20C2666F00E46759 /* Assets.xcassets in Resources */,
-				627CF99C20C2666E00E46759 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +217,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		627CF99A20C2666E00E46759 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				627CF99B20C2666E00E46759 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		627CF99F20C2666F00E46759 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -361,6 +349,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QX9SH777P;
 				INFOPLIST_FILE = Domain_CodeChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QX9SH777P;
 				INFOPLIST_FILE = Domain_CodeChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
