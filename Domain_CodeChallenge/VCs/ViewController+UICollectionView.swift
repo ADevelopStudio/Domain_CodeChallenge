@@ -22,17 +22,25 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 100)
+        let width = UIScreen.main.bounds.width - 16
+        return CGSize(width: width, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 8, bottom: 5, right: 8)
     }
 
     func setupCollectionView()  {
-        collectionView.backgroundColor = .blue
         view.addSubview(collectionView, constraints: {
             $0.edges.pinToSuperview()
         })
     }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.collectionView.performBatchUpdates({}) { (_) in }
+        }, completion:nil)
+    }
+
 }
 
