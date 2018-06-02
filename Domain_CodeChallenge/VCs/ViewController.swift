@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         self.properties  = []
         self.collectionView.reloadData()
         connectionManager.getData(typeOfRequest: TypeOfRequest.allValues[segmenter.selectedSegmentIndex]) { results, errorMessage in
-            self.properties = Array(results.prefix(20)) // enought according to the callenge description
+            self.properties = Array(results.prefix(20)) // enought according to the challenge description
             self.collectionView.reloadData()
             if !errorMessage.isEmpty {self.showError(errorMessage)}
         }

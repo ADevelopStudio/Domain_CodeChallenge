@@ -16,10 +16,11 @@ struct Property: Codable {
     var address: String
     var media: [Media]
     
-    /// result =  isNowFavorite: True/False
     var isFavorite: Bool {
         return  Constants.favouriteList.contains(self.id)
     }
+    
+    /// result =  isNowFavorite: True/False
     func addRemoveFromFavorites() -> Bool {
         if isFavorite {
             Constants.favouriteList.remove(self.id)

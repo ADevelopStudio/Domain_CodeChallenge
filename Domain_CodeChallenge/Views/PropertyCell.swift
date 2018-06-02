@@ -29,13 +29,6 @@ class PropertyCell: UICollectionViewCell {
         self.createView()
     }
     
-    func fillWith(property: Property, onFavoriteTap: @escaping (FavouriteButton)->())  {
-        self.favoriteBtn.onTap = onFavoriteTap
-        self.favoriteBtn.setFavorite(property.isFavorite)
-        self.descr.text = property.address
-        self.imageView.fillWith(property.media)
-    }
-    
     func createView()  {
         self.addSubview(imageView, descr, favoriteBtn, constraints: { v1, v2, v3 in
             v1.edges.pinToSuperview(insets: UIEdgeInsets(top: 0, left: 0, bottom: self.descriptionLabelHeight, right: 0), relation: .equal)
@@ -45,7 +38,14 @@ class PropertyCell: UICollectionViewCell {
             v3.width.set(40)
             v3.edges(.top, .left).pinToSuperviewMargins()
         })
-        descr.text = "test me now"
+    }
+    
+
+    func fillWith(property: Property, onFavoriteTap: @escaping (FavouriteButton)->())  {
+        self.favoriteBtn.onTap = onFavoriteTap
+        self.favoriteBtn.setFavorite(property.isFavorite)
+        self.descr.text = property.address
+        self.imageView.fillWith(property.media)
     }
     
     required init?(coder aDecoder: NSCoder) {
