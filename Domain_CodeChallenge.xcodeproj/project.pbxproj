@@ -23,6 +23,7 @@
 		627CF9CB20C27C2500E46759 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9CA20C27C2500E46759 /* Constants.swift */; };
 		627CF9CD20C282A800E46759 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9CC20C282A800E46759 /* LoadingImageView.swift */; };
 		627CF9CF20C283DD00E46759 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9CE20C283DD00E46759 /* FavoriteButton.swift */; };
+		627CF9D120C28B7B00E46759 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9D020C28B7B00E46759 /* ConnectionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		627CF9CA20C27C2500E46759 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		627CF9CC20C282A800E46759 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		627CF9CE20C283DD00E46759 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		627CF9D020C28B7B00E46759 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				627CF9BD20C26D6100E46759 /* Layout */,
 				627CF9C420C2748800E46759 /* Extentions.swift */,
 				627CF9CA20C27C2500E46759 /* Constants.swift */,
+				627CF9D020C28B7B00E46759 /* ConnectionManager.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				627CF9C120C26DA000E46759 /* UIView+constraints.swift in Sources */,
 				627CF9B820C2681500E46759 /* ViewController+UICollectionView.swift in Sources */,
 				627CF9C520C2748800E46759 /* Extentions.swift in Sources */,
+				627CF9D120C28B7B00E46759 /* ConnectionManager.swift in Sources */,
 				627CF9C320C26DA000E46759 /* Yalta+Extensions.swift in Sources */,
 				627CF9BB20C26CB200E46759 /* PropertyCell.swift in Sources */,
 				627CF99720C2666D00E46759 /* AppDelegate.swift in Sources */,

@@ -27,38 +27,22 @@ class LoadingImageView: UIImageView {
         })
     }
     
-    func downloadImageFrom(urlString: String, imageMode: UIViewContentMode) {
-        guard let url = URL(string: urlString) else {
-            self.setError()
-            return
+    func downloadImageFrom(urlString: String) {
+        self.loadingIndicator.startAnimating()
+        connectionManager.downloadImageFrom(urlString: urlString) { (image) in
+            self.loadingIndicator.stopAnimating()
+            if let image = image {
+                self.contentMode = .scaleAspectFit
+                self.image = image
+            } else {
+                self.setError()
+            }
         }
-        downloadImageFrom(url)
     }
+    
     func setError()  {
         self.contentMode = .center
         self.image = #imageLiteral(resourceName: "imageError")
-    }
-    
-    func downloadImageFrom(_ url: URL) {
-        if let cachedImage = Constants.imageCache.object(forKey:  url.absoluteString as NSString) {
-            self.contentMode = .scaleAspectFit
-            self.image = cachedImage
-        } else {
-            self.loadingIndicator.startAnimating()
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data, error == nil else { return }
-                DispatchQueue.main.async {
-                    self.loadingIndicator.stopAnimating()
-                    guard let imageToCache =  UIImage(data: data) else {
-                        self.setError()
-                        return
-                    }
-                    self.contentMode = .scaleAspectFit
-                    Constants.imageCache.setObject(imageToCache, forKey:  url.absoluteString as NSString)
-                    self.image = imageToCache
-                }
-                }.resume()
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
