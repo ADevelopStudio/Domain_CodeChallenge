@@ -8,7 +8,13 @@
 
 import Foundation
 import UIKit
-
+extension UIViewController {
+    func showError(_ text: String) {
+        let alert = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
 extension UITraitCollection {
     func numberOfRowsInCollectionView() -> CGFloat  {
         switch self.horizontalSizeClass {

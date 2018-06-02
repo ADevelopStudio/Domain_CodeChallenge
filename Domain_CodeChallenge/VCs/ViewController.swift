@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         return cv
     }()
     
+    var properties = Array<Property>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
@@ -36,7 +38,11 @@ class ViewController: UIViewController {
     }
     
     @objc func loadData()  {
-        print("Load Data \(TypeOfRequest.allValues[segmenter.selectedSegmentIndex])")
+        connectionManager.getData(typeOfRequest: TypeOfRequest.allValues[segmenter.selectedSegmentIndex]) { results, errorMessage in
+            self.properties = Array(results.prefix(20)) // enought according to the callenge description
+            self.collectionView.reloadData()
+            if !errorMessage.isEmpty {self.showError(errorMessage)}
+        }
     }
 }
 

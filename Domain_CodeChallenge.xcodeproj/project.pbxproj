@@ -24,6 +24,7 @@
 		627CF9CD20C282A800E46759 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9CC20C282A800E46759 /* LoadingImageView.swift */; };
 		627CF9CF20C283DD00E46759 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9CE20C283DD00E46759 /* FavoriteButton.swift */; };
 		627CF9D120C28B7B00E46759 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9D020C28B7B00E46759 /* ConnectionManager.swift */; };
+		627CF9D420C2CAC700E46759 /* SmallClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627CF9D320C2CAC700E46759 /* SmallClasses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		627CF9CC20C282A800E46759 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 		627CF9CE20C283DD00E46759 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		627CF9D020C28B7B00E46759 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		627CF9D320C2CAC700E46759 /* SmallClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallClasses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				627CF99620C2666D00E46759 /* AppDelegate.swift */,
+				627CF9D220C2CAB500E46759 /* Models */,
 				627CF9B920C26C9300E46759 /* Views */,
 				627CF9B620C267F400E46759 /* VCs */,
 				627CF9BC20C26D2300E46759 /* Support Files */,
@@ -159,6 +162,14 @@
 				627CF9BE20C26D7800E46759 /* Yalta+Extensions.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		627CF9D220C2CAB500E46759 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				627CF9D320C2CAC700E46759 /* SmallClasses.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				627CF9D120C28B7B00E46759 /* ConnectionManager.swift in Sources */,
 				627CF9C320C26DA000E46759 /* Yalta+Extensions.swift in Sources */,
 				627CF9BB20C26CB200E46759 /* PropertyCell.swift in Sources */,
+				627CF9D420C2CAC700E46759 /* SmallClasses.swift in Sources */,
 				627CF99720C2666D00E46759 /* AppDelegate.swift in Sources */,
 				627CF9CF20C283DD00E46759 /* FavoriteButton.swift in Sources */,
 			);
