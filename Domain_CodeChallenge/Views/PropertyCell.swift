@@ -33,6 +33,7 @@ class PropertyCell: UICollectionViewCell {
         self.favoriteBtn.onTap = onFavoriteTap
         self.favoriteBtn.setFavorite(isFavorite)
         self.descr.text = property.address
+        self.imageView.fillWith(property.media)
     }
     
     func createView()  {

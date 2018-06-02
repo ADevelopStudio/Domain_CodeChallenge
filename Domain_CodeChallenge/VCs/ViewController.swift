@@ -38,6 +38,8 @@ class ViewController: UIViewController {
     }
     
     @objc func loadData()  {
+        self.properties  = []
+        self.collectionView.reloadData()
         connectionManager.getData(typeOfRequest: TypeOfRequest.allValues[segmenter.selectedSegmentIndex]) { results, errorMessage in
             self.properties = Array(results.prefix(20)) // enought according to the callenge description
             self.collectionView.reloadData()

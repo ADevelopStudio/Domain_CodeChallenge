@@ -56,33 +56,30 @@ struct ConnectionManager {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = jsonData
-        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+
         URLSession.shared.dataTask(with: request) { data, response, error in
             do {
                 guard let data = data else {
                     throw JSONError.NoData
                 }
-//                guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-//                    throw JSONError.ConversionFailed
-//                }
-//                print(json)
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let jsonSearchResults  = try? decoder.decode(SearchResults.self, from: data) else {
                     throw JSONError.ConversionFailed
                 }
-                print(jsonSearchResults.searchResults.count)
                 DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     completion(jsonSearchResults.searchResults, "")
                 }
             } catch let error as JSONError {
-//                print(error.rawValue)
                 DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     completion([], error.rawValue)
                 }
             } catch let error as NSError {
-//                print(error.debugDescription)
                 DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     completion([], error.debugDescription)
                 }
             }
