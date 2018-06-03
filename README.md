@@ -57,6 +57,7 @@ by _Dmitrii Zverev_. 3 July 2018
 - Error throwing Enums
 - Creating UI without Storyboard/Xib
 - Avoiding Massive View Controllers
+- writing code without single warning 
 - closures
 - escaping
 - tuples 
