@@ -27,7 +27,7 @@ class LoadingImageView: UIImageView {
         })
     }
     func fillWith(_ propertyMedias: [Media])  {
-        guard let firstImage = propertyMedias.first(where: {$0.mediaType == "image"}) else {return}
+        guard let firstImage = propertyMedias.first(where: {$0.mediaType == "image" && !$0.imageUrl.isEmpty}) else {return}
         self.downloadImageFrom(urlString: firstImage.imageUrl)
     }
     

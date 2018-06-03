@@ -18,6 +18,7 @@ extension ViewController {
     }
     
     @objc func resetFavourites(){
+        UIApplication.shared.tapFeedback()
         if  Constants.favouriteList.isEmpty {return}
         let alert = UIAlertController(title: "Clear favourite list", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { _ in

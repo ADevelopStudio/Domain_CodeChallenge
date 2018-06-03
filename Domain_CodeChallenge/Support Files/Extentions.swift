@@ -8,6 +8,32 @@
 
 import Foundation
 import UIKit
+
+extension UIView {
+    func bumpAnimation() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }) { (completed) in
+            UIView.animate(withDuration: 0.1) {
+                self.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }
+        }
+    }
+}
+extension UIApplication {
+    func tapFeedback(isLight: Bool = true)  {
+        if #available(iOS 10.0, *) {
+            if !isLight {
+                let impact = UIImpactFeedbackGenerator()
+                impact.impactOccurred()
+            }else{
+                let selection = UISelectionFeedbackGenerator()
+                selection.selectionChanged()
+            }
+        }
+    }
+}
+
 extension UIViewController {
     func showError(_ text: String) {
         let alert = UIAlertController(title: "Error", message: text, preferredStyle: .alert)

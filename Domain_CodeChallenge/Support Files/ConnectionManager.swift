@@ -50,13 +50,9 @@ struct ConnectionManager {
             return
         }
         UserDefaults.standard.set(TypeOfRequest.allValues.index(of: typeOfRequest) ?? 0, forKey: "TypeOfRequest")
-        let json: [String: Any] = ["search_mode": typeOfRequest.name.lowercased(),
-                                   "dwelling_types": ["Apartment / Unit / Flat"]]
-        
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.httpBody = jsonData
+        request.httpBody = typeOfRequest.jsonData()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
         URLSession.shared.dataTask(with: request) { data, response, error in

@@ -20,6 +20,11 @@ enum TypeOfRequest {
             return "Rent"
         }
     }
+    func jsonData() -> Data? {
+        let json: [String: Any] = ["search_mode": self.name.lowercased(),
+                                   "dwelling_types": ["Apartment / Unit / Flat"]]
+        return try? JSONSerialization.data(withJSONObject: json)
+    }
 }
 
 struct Constants {

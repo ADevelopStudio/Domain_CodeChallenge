@@ -26,6 +26,8 @@ class FavouriteButton: UIButton {
     }
     
     @objc func tap()  {
+        self.bumpAnimation()
+        UIApplication.shared.tapFeedback()
         self.onTap?(self)
     }
     

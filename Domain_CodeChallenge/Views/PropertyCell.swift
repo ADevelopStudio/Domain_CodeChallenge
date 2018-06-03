@@ -25,9 +25,8 @@ class PropertyCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        if frame.height < descriptionLabelHeight {return}
+        if frame.height < (descriptionLabelHeight + 5) {return}
         self.createView()
-        self.backgroundColor = UIColor.groupTableViewBackground
     }
     
     func createView()  {
@@ -39,6 +38,7 @@ class PropertyCell: UICollectionViewCell {
             v3.width.set(40)
             v3.edges(.top, .left).pinToSuperviewMargins()
         })
+        self.backgroundColor = UIColor.groupTableViewBackground
     }
     
 
