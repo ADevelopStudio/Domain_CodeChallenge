@@ -40,7 +40,7 @@ by _Dmitrii Zverev_. 3 July 2018
 
 <h2>Personal challenges:</h2>
 
-**I haven't written an app without storyboard or XIBs for ages so decided to not to use 3rd part libs or Pods (except Autolayout one):** 
+**I haven't written an app without storyboard or XIBs for ages so I decided, as an additional challenge, to not to use 3rd part libs or Pods (except Autolayout one):** 
 
  * Using Codable structs was fun and good practice, however, I still think that for the API requests the best solution is combination [Alamorife](https://github.com/Alamofire/Alamofire)  + [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON). It gives you full control of creating objects/structs (especially using optional initialisations) and literally 100% crush free code.
  * Although I used my own UIImageView subclass with image loading and caching methods, I'd recommend the [Kingfisher](https://github.com/onevcat/Kingfisher) as an amazing and totally covering all possible image loading scenarios tool.
@@ -56,6 +56,7 @@ by _Dmitrii Zverev_. 3 July 2018
 - URL Sessions
 - Error throwing Enums
 - Creating UI without Storyboard/Xib
+- Avoiding Massive View Controllers
 - closures
 - escaping
 - tuples 
