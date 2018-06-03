@@ -38,7 +38,7 @@ class PropertyCell: UICollectionViewCell {
             v3.width.set(40)
             v3.edges(.top, .left).pinToSuperviewMargins()
         })
-        self.backgroundColor = UIColor.groupTableViewBackground
+        self.backgroundColor = .groupTableViewBackground
     }
     
 
