@@ -15,9 +15,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "PropertyCell", for: indexPath) as! PropertyCell
-        cell.fillWith(property: properties[indexPath.row]) { favouriteBtn in
-            let isFavoriteNow = self.properties[indexPath.row].addRemoveFromFavorites()
-            favouriteBtn.setFavorite(isFavoriteNow)
+        cell.fillWith(property: properties[indexPath.row]) {
+            collectionView.reloadItems(at: [indexPath])
         }
         return cell
     }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum JSONError: String, Error {
-    case NoData = "ERROR: no data"
+    case NoData = ""
     case ConversionFailed = "ERROR: conversion from JSON failed"
 }
 

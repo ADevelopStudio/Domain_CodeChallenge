@@ -45,7 +45,8 @@ class PropertyCell: UICollectionViewCell {
     }
     
 
-    func fillWith(property: Property, onFavoriteTap: @escaping (FavouriteButton)->())  {
+    func fillWith(property: Property, onFavoriteTap: @escaping ()->())  {
+        self.favoriteBtn.propetry = property
         self.favoriteBtn.onTap = onFavoriteTap
         self.favoriteBtn.setFavorite(property.isFavorite)
         self.descriptionLabel.text = property.address

@@ -9,8 +9,9 @@
 import UIKit
 class FavouriteButton: UIButton {
 
-    var onTap: ((FavouriteButton)->())? = nil
     var isFavorite = false
+    var propetry: Property?
+    var onTap: (()->())?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +29,8 @@ class FavouriteButton: UIButton {
     @objc func tap()  {
         self.bumpAnimation()
         UIApplication.shared.tapFeedback()
-        self.onTap?(self)
+        propetry?.addRemoveFromFavourites()
+        self.onTap?()
     }
     
     required init?(coder aDecoder: NSCoder) {

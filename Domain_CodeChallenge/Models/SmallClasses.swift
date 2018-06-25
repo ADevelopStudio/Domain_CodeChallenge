@@ -20,16 +20,13 @@ struct Property: Codable {
         return  Constants.favouriteList.contains(self.id)
     }
     
-    /// result =  isNowFavorite: True/False
-    func addRemoveFromFavorites() -> Bool {
-        if isFavorite {
+    func addRemoveFromFavourites()  {
+        if Constants.favouriteList.contains(self.id) {
             Constants.favouriteList.remove(self.id)
-            Constants.saveFavouriteList()
-            return false
+        } else {
+            Constants.favouriteList.insert(self.id)
         }
-        Constants.favouriteList.insert(self.id)
         Constants.saveFavouriteList()
-        return true
     }
 }
 

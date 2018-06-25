@@ -32,7 +32,6 @@ struct Constants {
     
     static var favouriteList: Set<Int> =  Set(UserDefaults.standard.object(forKey: "FavoriteList") as? Array<Int> ?? [])
     
-    
     static func saveFavouriteList()  {
         UserDefaults.standard.set(Array(self.favouriteList), forKey: "FavoriteList")
         NotificationCenter.default.post(name: Notification.Name("FavoriteCounterDidChange"), object: nil)
