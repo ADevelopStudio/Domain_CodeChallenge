@@ -66,4 +66,4 @@ by _Dmitrii Zverev_. 3 July 2018
 - ..  and much more 
 
 __About Unit testing:__
-In my solution of the coding excersice, it was hard to find what exactly needs to be tested because all functions, methods, extensions and structs are simple and impossible-to-crash. Except might be a _JSON-to-Struct part_. However, to display that I know what unit tests are and how to write them, I implemented some examples including the _Asynchronous URL Connection test_.
+To display that I know what unit tests are and how to write them, I implemented some examples including the _Asynchronous URL Connection test_.
