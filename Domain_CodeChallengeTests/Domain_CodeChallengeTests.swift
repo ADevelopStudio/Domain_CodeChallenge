@@ -35,9 +35,8 @@ class Domain_CodeChallengeTests: XCTestCase {
         }
     }
     func testAsynchronousURLConnection() {
-        let manager = ConnectionManager()
        
-        let url = URL(string:  manager.domainBaseUrl)!
+        let url = URL(string:  ConnectionManager.domainBaseUrl)!
         let urlExpectation = expectation(description: "POST \(url)")
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

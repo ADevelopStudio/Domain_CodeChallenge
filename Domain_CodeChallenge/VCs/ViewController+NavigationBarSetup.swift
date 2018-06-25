@@ -17,6 +17,7 @@ extension ViewController {
         self.navigationItem.setRightBarButtonItems([favoriteCounter!], animated: false)
     }
     
+    
     @objc func resetFavourites(){
         UIApplication.shared.tapFeedback()
         if  Constants.favouriteList.isEmpty {return}
@@ -24,7 +25,6 @@ extension ViewController {
         alert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { _ in
             Constants.favouriteList = []
             Constants.saveFavouriteList()
-            self.favoriteCounter?.title = "☆: 0"
             self.collectionView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

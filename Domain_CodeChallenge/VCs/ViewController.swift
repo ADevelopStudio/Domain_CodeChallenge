@@ -35,12 +35,17 @@ class ViewController: UIViewController {
         self.setupCollectionView()
         self.setupNavigationBar()
         self.loadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFavoriteCounter), name: Notification.Name("FavoriteCounterDidChange"), object: nil)
+    }
+    
+    @objc func updateFavoriteCounter(){
+        self.favoriteCounter?.title = "☆: \(Constants.favouriteList.count)"
     }
     
     @objc func loadData()  {
         self.properties  = []
         self.collectionView.reloadData()
-        connectionManager.getData(typeOfRequest: TypeOfRequest.allValues[segmenter.selectedSegmentIndex]) { results, errorMessage in
+        ConnectionManager.getData(typeOfRequest: TypeOfRequest.allValues[segmenter.selectedSegmentIndex]) { results, errorMessage in
             self.properties = Array(results.prefix(20)) // enought according to the challenge description
             self.collectionView.reloadData()
             if !errorMessage.isEmpty {self.showError(errorMessage)}

@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-let connectionManager = ConnectionManager()
-
 enum JSONError: String, Error {
     case NoData = "ERROR: no data"
     case ConversionFailed = "ERROR: conversion from JSON failed"
 }
 
 
-struct ConnectionManager {
-    let domainBaseUrl = "https://domain-adapter-api.domain.com.au/v1/search"
-    
-    func downloadImageFrom(urlString: String, completion: @escaping (UIImage?)->()) {
+struct ImageLoader {
+    var imageLoadingDataTask: URLSessionDataTask?
+    mutating func downloadImageFrom(urlString: String, completion: @escaping (UIImage?)->()) {
+        imageLoadingDataTask?.cancel()
         guard let url = URL(string: urlString) else {
             completion(nil)
             return
@@ -29,9 +27,9 @@ struct ConnectionManager {
             completion(cachedImage)
             return
         }
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        imageLoadingDataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
-                completion(nil)
+                DispatchQueue.main.async {completion(nil)}
                 return
             }
             let img = UIImage(data: data)
@@ -41,10 +39,19 @@ struct ConnectionManager {
                     Constants.imageCache.setObject(img!, forKey:  url.absoluteString as NSString)
                 }
             }
-            }.resume()
+        }
+        imageLoadingDataTask?.resume()
     }
-    
-    func getData(typeOfRequest: TypeOfRequest, completion: @escaping (_ results: [Property], _ errorMessage: String)->()) {
+}
+
+
+
+struct ConnectionManager {
+    static let domainBaseUrl = "https://domain-adapter-api.domain.com.au/v1/search"
+    static var getDataTask: URLSessionDataTask?
+
+    static func getData(typeOfRequest: TypeOfRequest, completion: @escaping (_ results: [Property], _ errorMessage: String)->()) {
+        getDataTask?.cancel()
         guard let url = URL(string: domainBaseUrl) else {
             completion([], "Error creating url")
             return
@@ -55,7 +62,7 @@ struct ConnectionManager {
         request.httpBody = typeOfRequest.jsonData()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        getDataTask = URLSession.shared.dataTask(with: request) { data, response, error in
             do {
                 guard let data = data else {
                     throw JSONError.NoData
@@ -80,7 +87,8 @@ struct ConnectionManager {
                     completion([], error.debugDescription)
                 }
             }
-            }.resume()
+            }
+        getDataTask?.resume()
     }
     
 }

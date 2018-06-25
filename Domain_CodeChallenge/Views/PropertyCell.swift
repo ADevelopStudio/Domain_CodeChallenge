@@ -9,11 +9,10 @@
 import UIKit
 
 class PropertyCell: UICollectionViewCell {
-    let descriptionLabelHeight: CGFloat  = 50
-    
-    var imageView: LoadingImageView = LoadingImageView(frame: .zero)
+    private let descriptionLabelHeight: CGFloat  = 50
+    private var imageView: LoadingImageView = LoadingImageView(frame: .zero)
 
-    lazy var descr: UILabel = {
+    private var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 2
         label.font = .systemFont(ofSize: 14, weight: .regular)
@@ -25,12 +24,16 @@ class PropertyCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        if frame.height < (descriptionLabelHeight + 5) {return}
         self.createView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.setAsEmpty()
+    }
+    
     func createView()  {
-        self.addSubview(imageView, descr, favoriteBtn, constraints: { v1, v2, v3 in
+        self.addSubview(imageView, descriptionLabel, favoriteBtn, constraints: { v1, v2, v3 in
             v1.edges.pinToSuperview(insets: UIEdgeInsets(top: 0, left: 0, bottom: self.descriptionLabelHeight + 5, right: 0), relation: .equal)
             v2.edges(.right, .left,.bottom).pinToSuperviewMargins()
             v2.height.set(self.descriptionLabelHeight)
@@ -45,7 +48,7 @@ class PropertyCell: UICollectionViewCell {
     func fillWith(property: Property, onFavoriteTap: @escaping (FavouriteButton)->())  {
         self.favoriteBtn.onTap = onFavoriteTap
         self.favoriteBtn.setFavorite(property.isFavorite)
-        self.descr.text = property.address
+        self.descriptionLabel.text = property.address
         self.imageView.fillWith(property.media)
     }
     

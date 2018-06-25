@@ -18,12 +18,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         cell.fillWith(property: properties[indexPath.row]) { favouriteBtn in
             let isFavoriteNow = self.properties[indexPath.row].addRemoveFromFavorites()
             favouriteBtn.setFavorite(isFavoriteNow)
-            self.favoriteCounter?.title = "☆: \(Constants.favouriteList.count)"
         }
         return cell
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return properties.count
     }
