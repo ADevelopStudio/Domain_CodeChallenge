@@ -1,5 +1,5 @@
 # CodeChallenge for Domain
-by _Dmitrii Zverev_. 3 July 2018
+by _Dmitrii Zverev_. 3 June 2018
 
 <h2>Given Instructions:</h2>
 
